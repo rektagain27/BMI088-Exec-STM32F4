@@ -106,7 +106,7 @@ int main(void)
       Vector3 acceleration = ACCEL_READ_ACCELERATION();
 
       // Format the accelerometer data
-      uint8_t buffer[50];
+      uint8_t buffer[100];
       int length = snprintf((char*)buffer, sizeof(buffer), "X=%.2f, Y=%.2f, Z=%.2f\r\n", acceleration.x, acceleration.y, acceleration.z);
 
       // Transmit the formatted data via UART
