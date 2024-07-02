@@ -92,6 +92,7 @@ int main(void)
   MX_SPI1_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+  HAL_UART_Init(&huart1);
 
   /* USER CODE END 2 */
 
@@ -112,8 +113,8 @@ int main(void)
       // Transmit the formatted data via UART
       for (int i = 0; i < length; i++)
       {
-          USART1->TDR = buffer[i];
-          while ((USART1->ISR & USART_ISR_TC) == 0); // Wait for transmission to complete
+          USART1->DR = buffer[i];
+          while ((USART1->SR & USART_SR_TC) == 0); // Wait for transmission to complete
       }
 
       // Delay or perform other tasks
@@ -262,7 +263,7 @@ void Error_Handler(void)
   {
   }
   /* USER CODE END Error_Handler_Debug */
-}
+}}
 
 #ifdef  USE_FULL_ASSERT
 /**
