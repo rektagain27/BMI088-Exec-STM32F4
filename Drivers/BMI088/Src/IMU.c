@@ -31,6 +31,7 @@ void SPI1_Init(void)
     }
 }
 
+/*
 void HAL_SPI_MspInit(SPI_HandleTypeDef* spiHandle)
 {
     GPIO_InitTypeDef GPIO_InitStruct = {0};
@@ -43,11 +44,11 @@ void HAL_SPI_MspInit(SPI_HandleTypeDef* spiHandle)
         // Enable GPIO clocks
         __HAL_RCC_GPIOA_CLK_ENABLE();
 
-        /** SPI1 GPIO Configuration
+        * SPI1 GPIO Configuration
          * PA5  ------> SPI1_SCK
          * PA6  ------> SPI1_MISO
          * PA7  ------> SPI1_MOSI
-         */
+
         GPIO_InitStruct.Pin = GPIO_PIN_5 | GPIO_PIN_6 | GPIO_PIN_7;
         GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
         GPIO_InitStruct.Pull = GPIO_NOPULL;
@@ -59,6 +60,7 @@ void HAL_SPI_MspInit(SPI_HandleTypeDef* spiHandle)
 }
 
 
+*/
 
 void IMU_INIT(SPI_HandleTypeDef* spiHandle){
     ACCEL_INIT(spiHandle);

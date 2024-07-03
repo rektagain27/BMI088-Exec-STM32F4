@@ -164,6 +164,15 @@ Vector3 ACCEL_READ_ACCELERATION(){
     return parseRawUInts(rawVals);
 }
 
+
+void CUSTOM_ACCELERATION(float* rawVals) {
+    select();
+    readAddr(ADDR_ACC_X_LSB, rawVals, 6);
+    unselect();
+}
+
+
+
 float ACCEL_READ_TEMPERATURE(){
     uint8_t rawVals[2];
     int16_t rawVal;

@@ -1,6 +1,5 @@
 IMU.c:11:6:SPI1_Init	8	static
-IMU.c:34:6:HAL_SPI_MspInit	48	static
-IMU.c:63:6:IMU_INIT	16	static
-IMU.c:68:6:IMU_SETUP_FOR_LOGGING	8	static
-IMU.c:73:6:IMU_ENABLE_ALL	8	static
-IMU.c:80:5:IMU_READY	16	static
+IMU.c:65:6:IMU_INIT	16	static
+IMU.c:70:6:IMU_SETUP_FOR_LOGGING	8	static
+IMU.c:75:6:IMU_ENABLE_ALL	8	static
+IMU.c:82:5:IMU_READY	16	static

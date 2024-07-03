@@ -103,7 +103,11 @@ int main(void) {
 	// Main loop
 	   while (1) {
 	        // Read accelerometer data
-	        Vector3 acceleration = ACCEL_READ_ACCELERATION();
+		   float rawVals[6];
+		   CUSTOM_ACCELERATION(rawVals);
+
+		   // Now rawVals contains the read values
+
 
 	        // Format the accelerometer data
 	        uint8_t buffer[100];
