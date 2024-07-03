@@ -1,13 +1,13 @@
 #ifndef __BMI088_ACCEL 
 #define __BMI088_ACCEL 
 
+#include <BMI088/Inc/Vectors.h>
 #include "main.h"
-#include "Vectors.h"
 
 
 // Set port and pin for accelerometer here
-#define ACCEL_CS_PORT CSA_GPIO_Port
-#define ACCEL_CS_PIN CSA_Pin
+#define ACCEL_CS_PORT GPIOC
+#define ACCEL_CS_PIN GPIO_PIN_12
 
 typedef struct accelErrors
 {

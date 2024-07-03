@@ -1,0 +1,16 @@
+Gyro.c:66:6:GYRO_INIT	16	static
+Gyro.c:72:6:GYRO_GOOD_SETTINGS	8	static
+Gyro.c:81:9:GYRO_READ_ID	16	static
+Gyro.c:91:9:GYRO_READ_RATES	72	static
+Gyro.c:100:6:GYRO_RELOAD_SETTINGS	16	static
+Gyro.c:110:9:GYRO_SELF_TEST	16	static
+Gyro.c:133:16:GYRO_READ_FIFO	640	static
+Gyro.c:159:6:GYRO_SET_POWERMODE	16	static
+Gyro.c:164:6:GYRO_SET_RANGE	16	static
+Gyro.c:170:6:GYRO_SET_OUPUT_DATA_RATE	16	static
+Gyro.c:175:6:GYRO_SET_FIFO_MODE	16	static
+Gyro.c:182:13:select	8	static
+Gyro.c:186:13:unselect	8	static
+Gyro.c:190:13:readAddr	32	static
+Gyro.c:197:13:writeAddr	24	static
+Gyro.c:203:16:parseRawUInts	96	static

@@ -1,8 +1,9 @@
 
+#include <BMI088/Inc/Accel.h>
+#include <BMI088/Inc/Gyro.h>
+#include <BMI088/Inc/IMU.h>
 #include "stm32f4xx_hal.h"
-#include "IMU.h"
-#include "Accel.h"
-#include "Gyro.h"
+extern SPI_HandleTypeDef hspi1;
 
 
 

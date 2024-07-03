@@ -1,13 +1,13 @@
 #ifndef __BMI088_GYRO 
 #define __BMI088_GYRO 
 
+#include <BMI088/Inc/Vectors.h>
 #include "main.h"
-#include "Vectors.h"
 #include <stdlib.h>
 
 // Set port and pin for gyro here
-#define GYRO_CS_PORT CSG_GPIO_Port
-#define GYRO_CS_PIN CSG_Pin
+#define GYRO_CS_PORT GPIOC
+#define GYRO_CS_PIN GPIO_PIN_12
 
 typedef struct gyroDataBuffer
 {

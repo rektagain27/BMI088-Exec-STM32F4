@@ -22,6 +22,6 @@ OBJCOPY_BIN :=
 SUBDIRS := \
 Core/Src \
 Core/Startup \
-Drivers/STM32-BMI088-main/Src \
+Drivers/BMI088/Src \
 Drivers/STM32F4xx_HAL_Driver/Src \
 

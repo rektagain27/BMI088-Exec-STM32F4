@@ -1,4 +1,4 @@
-#include "Vectors.h"
+#include <BMI088/Inc/Vectors.h>
 
 Vector3 vSub(Vector3 a, Vector3 b){
     Vector3 out;

@@ -1,10 +1,10 @@
 #ifndef __BMI088_IMU 
 #define __BMI088_IMU 
 
+#include <BMI088/Inc/Accel.h>
+#include <BMI088/Inc/Gyro.h>
 #include "main.h"
 
-#include "Accel.h"
-#include "Gyro.h"
 
 void IMU_INIT(SPI_HandleTypeDef* spiHandler);
 
