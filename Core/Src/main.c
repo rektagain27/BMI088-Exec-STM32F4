@@ -101,31 +101,23 @@ int main(void) {
 	ACCEL_INIT(&hspi1); // Pass SPI handle to accelerometer initialization function
 
 	// Main loop
-	   while (1) {
+	    while (1) {
 	        // Read accelerometer data
-		   float rawVals[6];
-		   CUSTOM_ACCELERATION(rawVals);
-
-		   // Now rawVals contains the read values
-
+	        float rawVals[6];
+	        CUSTOM_ACCELERATION(rawVals);
 
 	        // Format the accelerometer data
 	        uint8_t buffer[100];
 	        int length = snprintf((char*)buffer, sizeof(buffer),
-	                "X=%.2f, Y=%.2f, Z=%.2f\r\n", acceleration.x, acceleration.y,
-	                acceleration.z);
+	                              "X=%.2f, Y=%.2f, Z=%.2f\r\n", rawVals[0], rawVals[1], rawVals[2]);
 
-		// Transmit the formatted data via UART
-		for (int i = 0; i < length; i++) {
-			USART1->DR = buffer[i];
-			while ((USART1->SR & USART_SR_TC) == 0)
-				; // Wait for transmission to complete
-		}
+	        // Transmit the formatted data via UART
+	        HAL_UART_Transmit(&huart1, buffer, length, HAL_MAX_DELAY);
 
-		// Delay or perform other tasks
-		HAL_Delay(1000);  // Delay for 1 second
+	        // Delay for 1 second
+	        HAL_Delay(1000);
+	    }
 	}
-}
 /**
  * @brief System Clock Configuration
  * @retval None
