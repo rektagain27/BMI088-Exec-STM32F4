@@ -101,22 +101,23 @@ int main(void) {
 	ACCEL_INIT(&hspi1); // Pass SPI handle to accelerometer initialization function
 
 	// Main loop
-	    while (1) {
-	        // Read accelerometer data
-	        float rawVals[6];
-	        CUSTOM_ACCELERATION(rawVals);
+	while (1)
+	  {
+	    // Dummy data for testing
+	    float dummyVals[3] = {1.23, 4.56, 7.89};
 
-	        // Format the accelerometer data
-	        uint8_t buffer[100];
-	        int length = snprintf((char*)buffer, sizeof(buffer),
-	                              "X=%.2f, Y=%.2f, Z=%.2f\r\n", rawVals[0], rawVals[1], rawVals[2]);
+	    // Format the dummy data
+	    uint8_t buffer[100];
+	    int length = snprintf((char*)buffer, sizeof(buffer),
+	                          "X=%.2f, Y=%.2f, Z=%.2f\r\n", dummyVals[0], dummyVals[1], dummyVals[2]);
 
-	        // Transmit the formatted data via UART
-	        HAL_UART_Transmit(&huart1, buffer, length, HAL_MAX_DELAY);
+	    // Transmit the formatted data via UART
+	    HAL_UART_Transmit(&huart1, buffer, length, HAL_MAX_DELAY);
 
-	        // Delay for 1 second
-	        HAL_Delay(1000);
-	    }
+	    // Delay for 0.001 second (1 ms)
+	    HAL_Delay(1);
+	  }
+	  /* USER CODE END WHILE */
 	}
 /**
  * @brief System Clock Configuration
@@ -206,7 +207,7 @@ static void MX_USART1_UART_Init(void) {
 
 	/* USER CODE END USART1_Init 1 */
 	huart1.Instance = USART1;
-	huart1.Init.BaudRate = 115200;
+	huart1.Init.BaudRate = 8400;
 	huart1.Init.WordLength = UART_WORDLENGTH_8B;
 	huart1.Init.StopBits = UART_STOPBITS_1;
 	huart1.Init.Parity = UART_PARITY_NONE;
